@@ -14,7 +14,9 @@ loans = [Loan(15000, 8.3),
         Loan(20000, 5.7)]
 ```
 
-Replace these with your loan balances and annualized interest
+Replace these with your loan balances and annualized interest.
+### Running
+Run with `poetry run python example.py`
 
 ### Different Example Analysis Runs
 There are two example ananlysis functions provided, `single_run_optimize` and `many_run_analysis`
