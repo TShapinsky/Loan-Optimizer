@@ -20,7 +20,7 @@ class LoanOptimizer:
         self.payment_period = payment_period
         self.loans = loans
 
-    def simulate(self, initial_payment: float, period_payment: float, *splits, pay_interest=False, debug_print=False) -> Tuple[float, relativedelta, DataFrame, DataFrame]:
+    def simulate(self, initial_payment: float, period_payment: float, *splits, pay_interest=False, debug_print=False) -> Tuple[float, relativedelta, pd.DataFrame, pd.DataFrame]:
         loans = [copy.copy(loan) for loan in self.loans]
         date = copy.copy(self.start_date)
         total_paid = 0
@@ -110,7 +110,7 @@ class LoanOptimizer:
         amounts.append(amount)
         return amounts
 
-    def optimize(self, initial_payment: float, period_payment: float, pay_interest=False, debug_print=False) -> Tuple[float, relativedelta, List[float], List[float], DataFrame, DataFrame]:
+    def optimize(self, initial_payment: float, period_payment: float, pay_interest=False, debug_print=False) -> Tuple[float, relativedelta, List[float], List[float], pd.DataFrame, pd.DataFrame]:
         """Optimize loan repayment strategy for given constraints
         
         Keyword Arguments:
